@@ -1,0 +1,273 @@
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+    <style>
+
+        .base-timer {
+          position: relative;
+          width: 100px;
+          float: right;
+        }
+        
+        .base-timer__svg {
+          transform: scaleX(-1);
+        }
+        
+        .base-timer__circle {
+          fill: none;
+          stroke: none;
+        }
+        
+        .base-timer__path-elapsed {
+          stroke-width: 7px;
+          stroke: grey;
+        }
+        
+        .base-timer__path-remaining {
+          stroke-width: 7px;
+          stroke-linecap: round;
+          transform: rotate(90deg);
+          transform-origin: center;
+          transition: 1s linear all;
+          fill-rule: nonzero;
+          stroke: currentColor;
+        }
+        
+        .base-timer__path-remaining.green {
+          color: rgb(65, 184, 131);
+        }
+        
+        .base-timer__path-remaining.orange {
+          color: orange;
+        }
+        
+        .base-timer__path-remaining.red {
+          color: red;
+        }
+        
+        .base-timer__label {
+          position: absolute;
+          width: 90px;
+          height: 100px;
+          top: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 21px;
+        }
+        
+        * {
+          box-sizing: border-box;
+        }
+        
+        body {
+          margin: 0;
+          font-family: Arial;
+          font-size: 17px;
+        }
+        
+        #myVideo {
+          position: fixed;
+          right: 0;
+          bottom: 0;
+          min-width: 100%; 
+          min-height: 100%;
+        }
+        
+        .content {
+          position: fixed;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.5);
+          color: #f1f1f1;
+          width: 100%;
+          padding: 20px;
+        }
+        </style>
+</head>
+<body>
+    <style>
+        .rw-conversation-container .rw-message-text .rw-markdown p:last-child {margin-bottom: 0;font-size: 15px;}
+        .rw-conversation-container .rw-header{background-color:hsl(178, 54%, 45%);}
+        .rw-conversation-container .rw-messages-container{background-color: #eaeef3;} .rw-message .rw-client{background-color: #070cf9;}
+        .rw-launcher{background-color: hsl(250, 69%, 61%);}
+        .rw-response{background-color: #ffffff;}
+        .rw-conversation-container .rw-reply{background-color: #070cf9; border: 1px solid hsl(250, 69%, 61%);}
+        #overlay{position: relative;z-index: 1;}
+    </style>
+    <div id="overlay">
+        <a href="{{url_for('page10')}}"><img id="page_10" style="float: right;" height=35 src="https://img.icons8.com/nolan/452/9-circle.png" alt="next"/></a>&nbsp;&nbsp;
+        <a href="{{url_for('page9')}}"><img id="page_9" style="float: right;" height=35 src="https://img.icons8.com/nolan/452/8-circle.png" alt="next"/></a>&nbsp;&nbsp;
+        <a href="{{url_for('page8')}}"><img id="page_8" style="float: right;" height=35 src="https://img.icons8.com/nolan/452/7-circle.png" alt="next"/></a>&nbsp;&nbsp;
+        <a href="{{url_for('page7')}}"><img id="page_7" style="float: right;" height=35 src="https://img.icons8.com/nolan/452/6-circle.png" alt="next"/></a>&nbsp;&nbsp;
+        <a href="{{url_for('page6')}}"><img id="page_6" style="float: right;" height=35 src="https://img.icons8.com/nolan/452/5-circle.png" alt="next"/></a>&nbsp;&nbsp;
+        <a href="{{url_for('page5')}}"><img id="page_5" style="float: right;" height=35 src="https://img.icons8.com/nolan/452/4-circle.png" alt="next"/></a>&nbsp;&nbsp;
+        <a href="{{url_for('page4')}}"><img id="page_4" style="float: right;" height=35 src="https://img.icons8.com/nolan/452/3-circle.png" alt="next"/></a>&nbsp;&nbsp;
+        <a href="{{url_for('page3')}}"><img id="page_3" style="float: right;" height=35 src="https://img.icons8.com/nolan/452/2-circle.png" alt="next"/></a>&nbsp;&nbsp;
+        <a href="{{url_for('page2')}}"><img id="page_2" style="float: right;" height=35 src="https://img.icons8.com/nolan/452/1-circle.png" alt="next"/></a>&nbsp;&nbsp;
+        <a href="/"><img id="page_1" style="float: right;" height=35 src="https://img.icons8.com/nolan/452/0-circle.png" alt="next"/></a>&nbsp;&nbsp;
+      </div>
+      {% block content %}
+      {% endblock content%}
+      <div id="app"></div>
+      <script>
+        const FULL_DASH_ARRAY = 283;
+const WARNING_THRESHOLD = 10;
+const ALERT_THRESHOLD = 5;
+
+const COLOR_CODES = {
+info: {
+  color: "green"
+},
+warning: {
+  color: "orange",
+  threshold: WARNING_THRESHOLD
+},
+alert: {
+  color: "red",
+  threshold: ALERT_THRESHOLD
+}
+};
+
+const TIME_LIMIT = 20;
+let timePassed = 0;
+let timeLeft = TIME_LIMIT;
+let timerInterval = null;
+let remainingPathColor = COLOR_CODES.info.color;
+
+document.getElementById("app").innerHTML = `
+<div class="base-timer">
+<svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <g class="base-timer__circle">
+    <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+    <path
+      id="base-timer-path-remaining"
+      stroke-dasharray="283"
+      class="base-timer__path-remaining ${remainingPathColor}"
+      d="
+        M 50, 50
+        m -45, 0
+        a 45,45 0 1,0 90,0
+        a 45,45 0 1,0 -90,0
+      "
+    ></path>
+  </g>
+</svg>
+<span id="base-timer-label" class="base-timer__label">${formatTime(
+  timeLeft
+)}</span>
+</div>
+`;
+
+startTimer();
+
+function onTimesUp() {
+clearInterval(timerInterval);
+}
+
+function startTimer() {
+timerInterval = setInterval(() => {
+  timePassed = timePassed += 1;
+  timeLeft = TIME_LIMIT - timePassed;
+  document.getElementById("base-timer-label").innerHTML = formatTime(
+    timeLeft
+  );
+  setCircleDasharray();
+  setRemainingPathColor(timeLeft);
+
+  if (timeLeft === 0) {
+    onTimesUp();
+  }
+}, 1000);
+}
+
+function formatTime(time) {
+const minutes = Math.floor(time / 60);
+let seconds = time % 60;
+
+if (seconds < 10) {
+  seconds = `0${seconds}`;
+}
+
+return `${minutes}:${seconds}`;
+}
+
+function setRemainingPathColor(timeLeft) {
+const { alert, warning, info } = COLOR_CODES;
+if (timeLeft <= alert.threshold) {
+  document
+    .getElementById("base-timer-path-remaining")
+    .classList.remove(warning.color);
+  document
+    .getElementById("base-timer-path-remaining")
+    .classList.add(alert.color);
+} else if (timeLeft <= warning.threshold) {
+  document
+    .getElementById("base-timer-path-remaining")
+    .classList.remove(info.color);
+  document
+    .getElementById("base-timer-path-remaining")
+    .classList.add(warning.color);
+}
+}
+
+function calculateTimeFraction() {
+const rawTimeFraction = timeLeft / TIME_LIMIT;
+return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+}
+
+function setCircleDasharray() {
+const circleDasharray = `${(
+  calculateTimeFraction() * FULL_DASH_ARRAY
+).toFixed(0)} 283`;
+document
+  .getElementById("base-timer-path-remaining")
+  .setAttribute("stroke-dasharray", circleDasharray);
+}
+</script>
+<script>!(function () {
+    let e = document.createElement("script"),
+      t = document.head || document.getElementsByTagName("head")[0];
+    (e.src = "../static/index_updated.js"),
+      // Replace 1.x.x with the version that you want
+      (e.async = !0),
+      (e.onload = () => {
+        window.WebChat.default(
+          {
+            initPayload: '/greet',
+            customData: { language: "en" },
+            socketUrl: "http://localhost:5005",
+            // socketUrl: "http://20.51.241.242:5005",
+            // socketUrl: "https://c39e-20-51-241-242.ngrok.io",
+            title: 'Dodo',
+            subtitle: 'StateStreet Corp',
+            profileAvatar: "../static/images/dodo_logo_2.png",
+            showAvatar: "../static/images/dodo_logo_2.png",
+            showFullScreenButton: true,
+            showMessageDate: true,
+            inputTextFieldHint: "What's on your mind?...",
+            // docViewer: true,
+            displayUnreadCount: true,
+            // params:{
+            //             images: {
+            //               dims: {
+            //                 width: 300,
+            //                 height: 200
+            //               }
+            //             }
+            //           },
+            // embedded: true,
+            // add other props here
+          },
+          null
+        );
+      }),
+      t.insertBefore(e, t.firstChild);
+  })();
+
+  function nextPage(e) {
+    alert("on click");
+  }
+  </script>
+</body>
+</html>

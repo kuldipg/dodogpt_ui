@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- <div>
+    <img src="{{url_for('static', filename='images/7.png')}}" alt="" align="middle" style="width:100%">
+</div> -->
+
+<!-- <style>
+    body  {
+      background-image:url("{{url_for('static', filename='images/7.png')}}");
+    }
+    </style> -->
+<div>
+    <video width="800" autoplay loop muted plays-inline id="myVideo">
+        <source src= "{{url_for('static', filename='images/dodo_features_updated.mp4')}}" type="video/mp4">
+      </video>
+</div>
+{% endblock content %}
+
