@@ -1,0 +1,309 @@
+<html>
+    <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- <link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet"> -->
+<style>
+
+body {
+  font-family: sans-serif;
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
+.base-timer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.base-timer__svg {
+  transform: scaleX(-1);
+}
+
+.base-timer__circle {
+  fill: none;
+  stroke: none;
+}
+
+.base-timer__path-elapsed {
+  stroke-width: 7px;
+  stroke: grey;
+}
+
+.base-timer__path-remaining {
+  stroke-width: 7px;
+  stroke-linecap: round;
+  transform: rotate(90deg);
+  transform-origin: center;
+  transition: 1s linear all;
+  fill-rule: nonzero;
+  stroke: currentColor;
+}
+
+.base-timer__path-remaining.green {
+  color: rgb(65, 184, 131);
+}
+
+.base-timer__path-remaining.orange {
+  color: orange;
+}
+
+.base-timer__path-remaining.red {
+  color: red;
+}
+
+.base-timer__label {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial;
+  font-size: 17px;
+}
+
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+</style>
+
+    </head>
+    <body>
+      <style>
+        .rw-conversation-container .rw-message-text .rw-markdown p:last-child {margin-bottom: 0;font-size: 15px;}
+        .rw-conversation-container .rw-header{background-color:hsl(178, 54%, 45%);}
+        .rw-conversation-container .rw-messages-container{background-color: #eaeef3;} .rw-message .rw-client{background-color: #070cf9;}
+        .rw-launcher{background-color: hsl(250, 69%, 61%);}
+        .rw-response{background-color: #ffffff;}
+        .rw-conversation-container .rw-reply{background-color: #070cf9; border: 1px solid hsl(250, 69%, 61%);}
+    </style>
+        <video width="800" autoplay loop muted plays-inline id="myVideo">
+        <!-- <video width="800" autoplay loop muted plays-inline> -->
+          <source src= "{{url_for('static', filename='images/dodo_features_updated.mp4')}}" type="video/mp4">
+
+          <!-- <source src="mov_bbb.ogg" type="video/ogg"> -->
+          Your browser does not support HTML video.
+        </video>
+        <div id="app"></div>
+        <!-- <h2>JavaScript Speech Recognition</h2>
+        <p>Click on the below button and then allow button and speak something...</p>
+        <button class="btn btn-default" onclick="jsSpeechRecognition()">Speech Search</button>
+	      <p><span id="event"></span></p>
+        <div id="result" class="hide"></div> -->
+        <script>
+          const FULL_DASH_ARRAY = 283;
+const WARNING_THRESHOLD = 10;
+const ALERT_THRESHOLD = 5;
+
+const COLOR_CODES = {
+  info: {
+    color: "green"
+  },
+  warning: {
+    color: "orange",
+    threshold: WARNING_THRESHOLD
+  },
+  alert: {
+    color: "red",
+    threshold: ALERT_THRESHOLD
+  }
+};
+
+const TIME_LIMIT = 20;
+let timePassed = 0;
+let timeLeft = TIME_LIMIT;
+let timerInterval = null;
+let remainingPathColor = COLOR_CODES.info.color;
+
+document.getElementById("app").innerHTML = `
+<div class="base-timer">
+  <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+    <g class="base-timer__circle">
+      <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+      <path
+        id="base-timer-path-remaining"
+        stroke-dasharray="283"
+        class="base-timer__path-remaining ${remainingPathColor}"
+        d="
+          M 50, 50
+          m -45, 0
+          a 45,45 0 1,0 90,0
+          a 45,45 0 1,0 -90,0
+        "
+      ></path>
+    </g>
+  </svg>
+  <span id="base-timer-label" class="base-timer__label">${formatTime(
+    timeLeft
+  )}</span>
+</div>
+`;
+
+startTimer();
+
+function onTimesUp() {
+  clearInterval(timerInterval);
+}
+
+function startTimer() {
+  timerInterval = setInterval(() => {
+    timePassed = timePassed += 1;
+    timeLeft = TIME_LIMIT - timePassed;
+    document.getElementById("base-timer-label").innerHTML = formatTime(
+      timeLeft
+    );
+    setCircleDasharray();
+    setRemainingPathColor(timeLeft);
+
+    if (timeLeft === 0) {
+      onTimesUp();
+    }
+  }, 1000);
+}
+
+function formatTime(time) {
+  const minutes = Math.floor(time / 60);
+  let seconds = time % 60;
+
+  if (seconds < 10) {
+    seconds = `0${seconds}`;
+  }
+
+  return `${minutes}:${seconds}`;
+}
+
+function setRemainingPathColor(timeLeft) {
+  const { alert, warning, info } = COLOR_CODES;
+  if (timeLeft <= alert.threshold) {
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.remove(warning.color);
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.add(alert.color);
+  } else if (timeLeft <= warning.threshold) {
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.remove(info.color);
+    document
+      .getElementById("base-timer-path-remaining")
+      .classList.add(warning.color);
+  }
+}
+
+function calculateTimeFraction() {
+  const rawTimeFraction = timeLeft / TIME_LIMIT;
+  return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
+}
+
+function setCircleDasharray() {
+  const circleDasharray = `${(
+    calculateTimeFraction() * FULL_DASH_ARRAY
+  ).toFixed(0)} 283`;
+  document
+    .getElementById("base-timer-path-remaining")
+    .setAttribute("stroke-dasharray", circleDasharray);
+}
+
+          
+
+        </script>
+
+        <script>!(function () {
+            let e = document.createElement("script"),
+              t = document.head || document.getElementsByTagName("head")[0];
+            (e.src = "../static/index_updated.js"),
+              // Replace 1.x.x with the version that you want
+              (e.async = !0),
+              (e.onload = () => {
+                window.WebChat.default(
+                  {
+                    initPayload: '/greet',
+                    customData: { language: "en" },
+                    socketUrl: "http://localhost:5005",
+                    title: 'Dodo',
+                    subtitle: 'StateStreet Corp',
+                    profileAvatar: "../static/images/dodo_logo_2.png",
+                    showAvatar: "../static/images/dodo_logo_2.png",
+                    showFullScreenButton: true,
+                    showMessageDate: true,
+                    inputTextFieldHint: "What's in your mind?...",
+                    // docViewer: true,
+                    displayUnreadCount: true,
+                    // params:{
+                    //             images: {
+                    //               dims: {
+                    //                 width: 300,
+                    //                 height: 200
+                    //               }
+                    //             }
+                    //           },
+                    // embedded: true,
+                    // add other props here
+                  },
+                  null
+                );
+              }),
+              t.insertBefore(e, t.firstChild);
+          })();
+          </script>
+          <!-- <script>
+            function jsSpeechRecognition() {
+                // getting result
+                var result = document.getElementById("result");
+                // getting user action
+                var event = document.getElementById("event");
+                    // new speech recognition object
+                    var SpeechRecognition = SpeechRecognition || webkitSpeechRecognition;
+                    var recognition = new SpeechRecognition();
+                
+                    // This runs when the speech recognition service starts
+                    recognition.onstart = function() {
+                        event.innerHTML = "Listening .....";
+                    };
+                    
+                    recognition.onspeechend = function() {
+                        event.innerHTML = "stopped listening, hope you are done...";
+                        recognition.stop();
+                    }
+                  
+                    // This runs when the speech recognition service returns result
+                    recognition.onresult = function(event) {
+                        var transcript = event.results[0][0].transcript;
+                        var confidence = event.results[0][0].confidence;
+                        result.innerHTML = "<strong>Text:</strong> " + transcript + "<br/><strong>Confidence:</strong> "+ confidence*100+"%";
+                        result.classList.remove("hide");
+                    };
+                  
+                     // start speech recognition
+                     recognition.start();
+              }
+        </script> -->
+    </body>
+</html>

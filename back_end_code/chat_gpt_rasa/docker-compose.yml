@@ -1,0 +1,9 @@
+version: '3'
+services:
+  myapp:
+    build: .
+    ports:
+      - "8000:8000"
+  mycontainer:
+    image: gpt_ver_5.0:latest
+
