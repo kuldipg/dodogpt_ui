@@ -24,7 +24,7 @@ py -m pip install rasa --user
 
 
 Edit actions.py inside dodogpt_ui\back_end_code\chat_gpt_rasa\actions, go to line 7, add/modify 
-openai.api_key = "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"
+openai.api_key = "<API-KEY>"
 
 
 
