@@ -2,6 +2,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{url_for('static', filename='css/bootstrap.css')}}" rel="stylesheet">
+    <link rel="stylesheet" href="{{url_for('static', filename='files/stt-global.min.css')}}" type="text/css">
     <style>
 
 /* Add a black background color to the top navigation */
@@ -89,11 +90,7 @@
           box-sizing: border-box;
         }
         
-        body {
-          margin: 0;
-          font-family: Arial;
-          font-size: 17px;
-        }
+        body{font-family:"DINNext",Arial,"sans-serif";line-height:1.3;color:#0a2f5d;background-color:#fff;margin:0;padding:0;word-wrap:break-word;overflow-wrap:break-word;overflow-x:hidden;width:100vw;text-align:left}
         
         #myVideo {
           position: fixed;
@@ -113,7 +110,7 @@
         }
         </style>
 </head>
-<body>
+<body class="page basicpage show-ot-banner">
   <!-- <div class="topnav">
     <a class="active" href="#home">Home</a>
     <a href="#news">News</a>
@@ -121,13 +118,17 @@
     <a href="#about">About</a>
   </div> -->
     <style>
-        .rw-conversation-container .rw-message-text .rw-markdown p:last-child {margin-bottom: 0;font-size: 15px;}
-        .rw-conversation-container .rw-header{background-color:hsl(178, 54%, 45%);}
-        .rw-conversation-container .rw-messages-container{background-color: #eaeef3;} .rw-message .rw-client{background-color: #070cf9;}
-        .rw-launcher{background-color: hsl(250, 69%, 61%);}
-        .rw-response{background-color: #ffffff;}
-        .rw-conversation-container .rw-reply{background-color: #070cf9; border: 1px solid hsl(250, 69%, 61%);}
-        #overlay{position: relative;z-index: 1;}
+        .rw-widget-container {font-family: "DINNext",Arial,"sans-serif" !important;}
+        .rw-conversation-container .rw-message-text .rw-markdown p:last-child {margin-bottom: 0;font-size: 15px; font-family: "DINNext",Arial,"sans-serif" !important;}
+        .rw-conversation-container .rw-header{background-color:#0a2f5d; font-family: "DINNext",Arial,"sans-serif" !important;}
+        .rw-conversation-container .rw-messages-container{background-color: #eaeef3;} .rw-message .rw-client{background-color: #0a2f5d;}
+        .rw-launcher{background-color: #0a2f5d;}
+        .rw-response{background-color: #f0f0f0; color: #000; font-family: "DINNext",Arial,"sans-serif" !important;}
+        .rw-conversation-container .rw-reply{background-color: #0a2f5d; border: 1px solid #0a2f5d; font-family: "DINNext",Arial,"sans-serif" !important;}
+        #overlay{position: relative;z-index: 1; font-family: "DINNext",Arial,"sans-serif" !important;}
+        .rw-conversation-container .rw-title {font-family: "DINNext",Arial,"sans-serif" !important;}
+        .rw-conversation-container .rw-client { font-family: "DINNext",Arial,"sans-serif" !important; }
+        .rw-conversation-container .rw-new-message { font-family: "DINNext",Arial,"sans-serif" !important; }
     </style>
     <!-- <div id="overlay">
         <a href="{{url_for('page10')}}"><img id="page_10" style="float: right;" height=35 src="https://img.icons8.com/nolan/452/9-circle.png" alt="next"/></a>&nbsp;&nbsp;
@@ -144,6 +145,388 @@
       {% block content %}
       {% endblock content%}
       <div id="app"></div>
+
+      <!-- START HOMEPAGE -->
+
+      <div class="ssmp-page">
+        <div>
+              <div class="root responsivegrid">
+      
+      
+      <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+          
+          <div class="header aem-GridColumn aem-GridColumn--default--12"><header id="header" class="ssmp-header ssmp-desktop-header ">
+          <nav class="ssmp-header__global-nav">
+              <ul id="clr_breadcrumb" class="ssmp-header__clr">
+                  <li>
+                      <a id="clr_breadcrumb_country" href="https://www.statestreet.com/us/en/individual#" class="ssmp-header__clr-item ssmp-header__clr-country" aa-global-ctalink="" data-aa-checked="true">United States</a>
+                  </li>
+                  <li class="ssmp-header__clr-item ssmp-header__clr-dot">
+                      .
+                  </li>
+                  <li>
+                      <a id="clr_breadcrumb_role" href="https://www.statestreet.com/us/en/individual#" class="ssmp-header__clr-item ssmp-header__clr-role" aa-global-ctalink="" data-aa-checked="true">Individual</a>
+                  </li>
+                  <li class="ssmp-header__caret">
+                      <svg class="ssmpsvg caret_up">
+                          <use xlink:href="#caret-down"></use>
+                      </svg>
+                  </li>
+              </ul>
+      
+              <div class="ssmp-header__actions">
+                  <!-- /* These links will be populated by JavaScript*/ -->
+                  <ul class="cmp-list">
+                      
+                          <li class="cmp-list__item contact-us">
+                              <a class="cmp-list__item-link" target="_blank" href="https://careers.statestreet.com/global/en" title="Careers" aa-global-ctalink="" data-aa-checked="true"><span>Careers<svg class="ssmpsvg secondarylink_launch">
+                                          <use xlink:href="#Launch_16x16"></use>
+                                      </svg><span></span></span></a>
+                          </li>
+                      
+                          <li class="cmp-list__item contact-us">
+                              <a class="cmp-list__item-link" target="_blank" href="https://newsroom.statestreet.com/overview/default.aspx" title="Newsroom" aa-global-ctalink="" data-aa-checked="true"><span>Newsroom<svg class="ssmpsvg secondarylink_launch">
+                                          <use xlink:href="#Launch_16x16"></use>
+                                      </svg><span></span></span></a>
+                          </li>
+                      
+                          <li class="cmp-list__item contact-us">
+                              <a class="cmp-list__item-link" target="_blank" href="https://investors.statestreet.com/investor-relations/default.aspx" title="Investors" aa-global-ctalink="" data-aa-checked="true"><span>Investors<svg class="ssmpsvg secondarylink_launch">
+                                          <use xlink:href="#Launch_16x16"></use>
+                                      </svg><span></span></span></a>
+                          </li>
+                      
+                          <li class="cmp-list__item contact-us">
+                              <a class="cmp-list__item-link" target="_self" href="https://www.statestreet.com/content/statestreet/us/en/individual/contactus" title="Contact Us" aa-global-ctalink="" data-aa-checked="true"><span>Contact Us<span></span></span></a>
+                          </li>
+                      
+                  </ul>
+              </div>
+          </nav>
+          <div class="ssmp-header__container">
+      
+              <div class="aem-Grid aem-Grid--12 ssmp-header__nav-container">
+      
+      
+                  <!--<hr data-sly-test="true" class="ssmp-header__divider"/> -->
+                  <!--remove by albert-->
+                  <!---->
+      
+                  <div class="ssmp-header__logo-row aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--8 aem-GridColumn--phone--8">
+                      <div class="ssmp-header__logo cmp-image ">
+                          <a href="https://www.statestreet.com/" aa-global-ctalink="" data-aa-checked="true"><img class="cmp-image__image" src="{{url_for('static', filename='files/Logo.svg')}}" alt="State Street Global Advisors" width="200" height="55"></a>
+                      </div>
+                      <div class="ssmp-header__logo-row-right">
+                          
+                      </div>
+                  </div>
+                  <nav class="ssmp-header__site-nav aem-GridColumn aem-GridColumn--default--9 aem-GridColumn--tablet--4 aem-GridColumn--phone--4">
+                      <div class="aem-Grid aem-Grid--12">
+                          <div class="ssmp-header__site-nav-container aem-GridColumn aem-GridColumn--default--8">
+                              <div class="ssmp-header__pages" id="header-navbar">
+                                  <div class="navigation-container">
+      <nav class="cmp-navigation" itemscope="" itemtype="http://schema.org/SiteNavigationElement">
+          <ul class="cmp-navigation__group">
+              <li class="cmp-navigation__item cmp-navigation__item--level-0" data-key="insights">
+                  
+        
+          <a href="https://www.statestreet.com/us/en/individual#" class="cmp-navigation__item-text" aria-label="Insights">Insights <svg class="ssmp-d-large-screen-none ssmpsvg caret_down"><use xlink:href="#caret-down"></use></svg><svg class="ssmp-d-large-screen-none ssmpsvg caret_up"><use xlink:href="#caret-down"></use></svg></a>
+          
+          
+          
+      
+      
+              </li>
+              
+          
+              <li class="cmp-navigation__item cmp-navigation__item--level-0" data-key="solutions">
+                  
+        
+          <a href="https://www.statestreet.com/us/en/individual#" class="cmp-navigation__item-text" aria-label="Solutions">Solutions <svg class="ssmp-d-large-screen-none ssmpsvg caret_down"><use xlink:href="#caret-down"></use></svg><svg class="ssmp-d-large-screen-none ssmpsvg caret_up"><use xlink:href="#caret-down"></use></svg></a>
+          
+          
+          
+      
+      
+              </li>
+              
+          
+              <li class="cmp-navigation__item cmp-navigation__item--level-0" data-key="about">
+                  
+        
+          <a href="https://www.statestreet.com/us/en/individual#" class="cmp-navigation__item-text" aria-label="About">About <svg class="ssmp-d-large-screen-none ssmpsvg caret_down"><use xlink:href="#caret-down"></use></svg><svg class="ssmp-d-large-screen-none ssmpsvg caret_up"><use xlink:href="#caret-down"></use></svg></a>
+          
+          
+          
+      
+      
+              </li>
+              
+          </ul>
+          <div class="nav-sub-panel-container" style="display: none;"><div class="nav-sub-panel aem-Grid aem-Grid--12" style="display: none;"><div class="nav-sub-title aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--12 aem-GridColumn--phone--12"><a href="https://www.statestreet.com/us/en/individual" target="_self" aa-global-navclicks="" data-aa-checked="true">Insights</a></div><div class="aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--6 aem-GridColumn--phone--12"><div class="nav-sub-group"><p class="nav-sub-heading list-heading">Latest Insights</p><ul><li><a href="https://www.statestreet.com/us/en/individual/insights?g=insights-section%3Adigital-and-technology" aa-global-navclicks="" data-aa-checked="true">Digital and Technology</a></li><li><a href="https://www.statestreet.com/us/en/individual/insights?g=insights-section%3Aesg" aa-global-navclicks="" data-aa-checked="true">ESG</a></li><li><a href="https://www.statestreet.com/us/en/individual/insights?g=insights-section%3Amarkets" aa-global-navclicks="" data-aa-checked="true">Markets</a></li><li><a href="https://www.statestreet.com/us/en/individual/insights?g=insights-section%3Aperspectives" aa-global-navclicks="" data-aa-checked="true">Perspectives</a></li><li><a href="https://www.statestreet.com/us/en/individual/insights?g=insights-section%3Aregulation-and-risk" aa-global-navclicks="" data-aa-checked="true">Regulation and Risk</a></li><li><a href="https://www.statestreet.com/us/en/individual/insights?g=insights-topic%3Aresearch" aa-global-navclicks="" data-aa-checked="true">Research</a></li></ul></div></div><div class="aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--6 aem-GridColumn--phone--12"><div class="nav-sub-group"><p class="nav-sub-heading list-heading">Featured Topics</p><ul><li><a href="https://www.statestreet.com/us/en/individual/insights?g=insights-topic%3Adata-management" aa-global-navclicks="" data-aa-checked="true">Data Management</a></li><li><a href="https://www.statestreet.com/us/en/individual/insights?g=insights-topic%3Aclimate-risk---decarbonization" aa-global-navclicks="" data-aa-checked="true">Climate Risk / Decarbonization</a></li><li><a href="https://www.statestreet.com/us/en/individual/insights?g=insights-topic%3Acorporate-responsibility" aa-global-navclicks="" data-aa-checked="true">Corporate Responsibility</a></li><li><a href="https://www.statestreet.com/us/en/individual/insights?g=insights-topic%3Aoperational-resilience" aa-global-navclicks="" data-aa-checked="true">Operational Resilience</a></li><li><a href="https://www.statestreet.com/us/en/individual/insights?g=insights-topic%3Adiversity-equity-and-inclusion" aa-global-navclicks="" data-aa-checked="true">Diversity, Equity and Inclusion</a></li><li><a href="https://www.statestreet.com/us/en/individual/insights?g=insights-topic%3Acrypto-currencies" aa-global-navclicks="" data-aa-checked="true">Cryptocurrencies</a></li></ul><div class="view-all"><a href="https://www.statestreet.com/us/en/individual/insights" aa-global-navclicks="" data-aa-checked="true">All Insights</a></div></div></div><div class="aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--12 aem-GridColumn--phone--12 featured featured-1"><div class="nav-sub-group"><a class="nav-featured-item" href="https://www.statestreet.com/us/en/individual/insights/the-future-of-esg" aa-global-navclicks="" data-aa-checked="true"><img src="{{url_for('static', filename='files/statestreet-the-future-esg-supplying.jpg')}}" alt="image load fail" width="900" height="490"><div class="nav-featured-right"><p class="eyebrow"></p><p class="nav-featured-title">The Future of ESG</p></div></a><div> The scope of ESG is constantly evolving and that means it’s not “set and forget.” We analyze the ESG universe now and provide a framework for what comes next.</div><div class="view-all"><a href="https://www.statestreet.com/content/statestreet/us/en/individual/insights/the-future-of-esg" aa-global-navclicks="" data-aa-checked="true"> Read more</a></div></div></div></div><div class="nav-sub-panel aem-Grid aem-Grid--12" style="display: block;"><div class="nav-sub-title aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--12 aem-GridColumn--phone--12"><a href="https://www.statestreet.com/us/en/individual" target="_self" aa-global-navclicks="" data-aa-checked="true">Solutions</a></div><div class="aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--6 aem-GridColumn--phone--12"><div class="nav-sub-group"><p class="nav-sub-heading list-heading">Key Offerings</p><ul><li><a href="https://www.statestreet.com/us/en/individual/solutions/global-markets" aa-global-navclicks="" data-aa-checked="true">Global Markets</a></li><li><a href="https://www.statestreet.com/us/en/individual/solutions/global-custody-services" aa-global-navclicks="" data-aa-checked="true">Global Custody Services</a></li><li><a href="https://www.statestreet.com/us/en/individual/solutions/etf-servicing" aa-global-navclicks="" data-aa-checked="true">ETF Services</a></li><li><a href="https://www.statestreet.com/us/en/individual/solutions/investment-management" aa-global-navclicks="" data-aa-checked="true">Investment Management</a></li><li><a target="_blank" href="https://www.statestreet.com/microsite/alpha/" aa-global-navclicks="" data-aa-checked="true">State Street Alpha<sup style="font-size: 12px;">SM</sup><svg class="ssmpsvg L1linkExternal"><use xlink:href="#Launch_16x16"></use></svg></a></li></ul></div></div><div class="aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--6 aem-GridColumn--phone--12"><div class="nav-sub-group"><p class="nav-sub-heading list-heading">Featured Solutions</p><ul><li><a href="https://www.statestreet.com/us/en/individual/solutions/data-solutions-and-services" aa-global-navclicks="" data-aa-checked="true">Data Solutions and Services</a></li><li><a href="https://www.statestreet.com/us/en/individual/solutions/digital-assets" aa-global-navclicks="" data-aa-checked="true">Digital Assets Services</a></li><li><a href="https://www.statestreet.com/us/en/individual/solutions/financing-and-collateral-solutions" aa-global-navclicks="" data-aa-checked="true">Financing and Collateral Solutions</a></li><li><a href="https://www.statestreet.com/us/en/individual/solutions/ESG" aa-global-navclicks="" data-aa-checked="true">ESG Solutions</a></li></ul><div class="view-all"><a href="https://www.statestreet.com/us/en/individual/solutions" aa-global-navclicks="" data-aa-checked="true">All Solutions</a></div></div></div><div class="aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--12 aem-GridColumn--phone--12 featured featured-1"><div class="nav-sub-group"><a class="nav-featured-item" href="https://www.statestreet.com/us/en/individual/discover/investment-servicing" aa-global-navclicks="" data-aa-checked="true"><img src="{{url_for('static', filename='files/state-street-so-investing-core-campaign.jpg')}}" alt="image load fail" width="900" height="490"><div class="nav-featured-right"><p class="eyebrow"></p><p class="nav-featured-title">Investing in Our Core</p></div></a><div>Streamline access to new markets, manage complex assets, enhance data delivery and focus on what matters with our sophisticated products, platforms and services.</div><div class="view-all"><a href="https://www.statestreet.com/content/statestreet/us/en/individual/discover/investment-servicing" aa-global-navclicks="" data-aa-checked="true">Learn more</a></div></div></div></div><div class="nav-sub-panel aem-Grid aem-Grid--12" style="display: none;"><div class="nav-sub-title aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--12 aem-GridColumn--phone--12"><a href="https://www.statestreet.com/us/en/individual" target="_self" aa-global-navclicks="" data-aa-checked="true">About</a></div><div class="aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--6 aem-GridColumn--phone--12"><div class="nav-sub-group"><p class="nav-sub-heading list-heading">Our Story</p><ul><li><a href="https://www.statestreet.com/us/en/individual/about/our-story" aa-global-navclicks="" data-aa-checked="true">Our Company</a></li><li><a target="_blank" href="https://annualreport.statestreet.com/" aa-global-navclicks="" data-aa-checked="true">2021 Annual Report<svg class="ssmpsvg L1linkExternal"><use xlink:href="#Launch_16x16"></use></svg></a></li><li><a href="https://www.statestreet.com/us/en/individual/about/our-story/industry-recognition" aa-global-navclicks="" data-aa-checked="true">Industry Recognition</a></li><li><a href="https://www.statestreet.com/us/en/individual/about/our-story/office-locations" aa-global-navclicks="" data-aa-checked="true">Office Locations</a></li></ul></div></div><div class="aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--6 aem-GridColumn--phone--12"><div class="nav-sub-group"><p class="nav-sub-heading list-heading">Our People</p><ul><li><a href="https://www.statestreet.com/us/en/individual/about/our-people" aa-global-navclicks="" data-aa-checked="true">Our Team</a></li><li><a href="https://www.statestreet.com/us/en/individual/about/our-people/leaderships" aa-global-navclicks="" data-aa-checked="true">Leadership</a></li><li><a href="https://www.statestreet.com/us/en/individual/about/our-people/global-inclusion-diversity-equity" aa-global-navclicks="" data-aa-checked="true">Diversity, Equity and Inclusion</a></li><li><a target="_blank" href="https://careers.statestreet.com/" aa-global-navclicks="" data-aa-checked="true">Careers<svg class="ssmpsvg L1linkExternal"><use xlink:href="#Launch_16x16"></use></svg></a></li></ul></div></div><div class="aem-GridColumn aem-GridColumn--default--3 aem-GridColumn--tablet--6 aem-GridColumn--phone--12"><div class="nav-sub-group"><p class="nav-sub-heading list-heading">Our Impact</p><ul><li><a href="https://www.statestreet.com/us/en/individual/about/our-impact" aa-global-navclicks="" data-aa-checked="true">Making a Difference</a></li><li><a href="https://www.statestreet.com/us/en/individual/about/our-impact/2021-esg-report" aa-global-navclicks="" data-aa-checked="true">2021 ESG Report</a></li><li><a href="https://www.statestreet.com/us/en/individual/about/our-impact/community-enagement-and-volunteerism" aa-global-navclicks="" data-aa-checked="true">Community Engagement</a></li><li><a href="https://www.statestreet.com/us/en/individual/about/our-impact/state-street-foundation" aa-global-navclicks="" data-aa-checked="true">State Street Foundation</a></li></ul></div></div></div></div>
+      </nav>
+      <div>
+          
+      </div></div>
+                              </div>
+                          </div>
+                          <div id="divSearchFieldWrapper" class="ssmp-header__search-field aem-GridColumn aem-GridColumn--default--4">
+      <section class="cmp-search" role="search">
+          <form class="cmp-search__form" data-cmp-hook-search="form" method="get" autocomplete="off">
+              <div class="cmp-search__field">
+                  <i class="cmp-search__icon" data-cmp-hook-search="icon">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path>
+                    </svg>
+                  </i>
+                  <span class="cmp-search__loading-indicator" data-cmp-hook-search="loadingIndicator"></span>
+                  <input class="cmp-search__input" data-cmp-hook-search="input" type="text" name="q" placeholder="Search" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-invalid="false" aria-owns="cmp-search-results-0">
+                  <button class="cmp-search__clear" data-cmp-hook-search="clear">
+                      <i class="cmp-search__clear-icon">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+                        </svg>
+                      </i>
+                  </button>
+              </div>
+          </form>
+          <div class="cmp-search__results" data-cmp-hook-search="results" role="listbox" aria-multiselectable="false" id="cmp-search-results-0" aria-hidden="true" style="display: none;"></div>
+          
+      <!--<script data-cmp-hook-search="itemTemplate" type="x-template">
+          <a class="cmp-search__item" data-cmp-hook-search="item">
+              <span class="cmp-search__item-title" data-cmp-hook-search="itemTitle"></span>
+          </a>
+      </script>-->
+      </section></div>
+                      </div>
+                      <button type="button" class="ssmp-header__hamburger-open" aria-label="menu"><svg class="ssmpsvg ssmpsvg-l hamburger">
+                              <use xlink:href="#hamburger"></use>
+                          </svg></button>
+                      <button type="button" class="ssmp-header__search-icon-open" aria-label="search-field-icon" id="btnSearchFieldIcon">
+                          <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                              <path fill="currentColor" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path>
+                          </svg>
+                      </button>
+                  </nav>
+      
+              </div>
+      
+          </div>
+          <div id="divSearchFieldContainerTablet" class="ssmp-header__search-field-tablet__container">
+              <div id="divSearchFieldWrapperTablet" class="ssmp-header__search-field-tablet aem-GridColumn aem-GridColumn--default--12">
+      <section class="cmp-search" role="search">
+          <form class="cmp-search__form" data-cmp-hook-search="form" method="get" autocomplete="off">
+              <div class="cmp-search__field">
+                  <i class="cmp-search__icon" data-cmp-hook-search="icon">
+                    <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                      <path fill="currentColor" d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z"></path>
+                    </svg>
+                  </i>
+                  <span class="cmp-search__loading-indicator" data-cmp-hook-search="loadingIndicator"></span>
+                  <input class="cmp-search__input" data-cmp-hook-search="input" type="text" name="q" placeholder="Search" role="combobox" aria-autocomplete="list" aria-haspopup="true" aria-invalid="false" aria-owns="cmp-search-results-1">
+                  <button class="cmp-search__clear" data-cmp-hook-search="clear">
+                      <i class="cmp-search__clear-icon">
+                        <svg style="width:24px;height:24px" viewBox="0 0 24 24">
+                          <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"></path>
+                        </svg>
+                      </i>
+                  </button>
+              </div>
+          </form>
+          <div class="cmp-search__results" data-cmp-hook-search="results" role="listbox" aria-multiselectable="false" id="cmp-search-results-1" aria-hidden="true" style="display: none;"></div>
+          
+      <!--<script data-cmp-hook-search="itemTemplate" type="x-template">
+          <a class="cmp-search__item" data-cmp-hook-search="item">
+              <span class="cmp-search__item-title" data-cmp-hook-search="itemTitle"></span>
+          </a>
+      </script>-->
+      </section></div>
+          </div>
+          <div>
+          
+      </div>
+      
+          <!--Leave site modal starts-->
+          
+          <!-- Leave site modal ends -->
+          <!-- link popup modal starts-->
+          
+          <!-- link popup modal ends-->
+          <!-- Fund Detail/Fund Finder tooltip popup starts-->
+          
+          <!-- Fund Detail/Fund Finder tooltip popup ends-->
+      </header></div>
+      <div class="responsivegrid aem-GridColumn aem-GridColumn--default--12">
+      
+      
+      <div class="aem-Grid aem-Grid--12 aem-Grid--default--12 ">
+          
+          <div class="l1-navigation aem-GridColumn aem-GridColumn--default--12">
+      </div>
+      <div class="l1-navigation aem-GridColumn aem-GridColumn--default--12">
+      </div>
+      <div class="l1-navigation aem-GridColumn aem-GridColumn--default--12">
+      </div>
+      <div class="hero-enhance-video aem-GridColumn aem-GridColumn--default--12">
+      
+      
+      
+      
+        <div class="ssmp-enhanced-hero ssmp-enhanced-hero__bg-color-nobleed ssmp-enhanced-hero__font-line-color-darkgreen ssmp-enhanced-hero__bg-image section-container" data-image-url="{{url_for('static', filename='files/SSDotcom-2022-About-OurStory-Hero.jpg')}}" style="background:rgba(0,0,0,0) url(&#39;{{url_for('static', filename='files/SSDotcom-2022-About-OurStory-Hero.jpg')}}&#39;) center/cover no-repeat;">
+          
+      
+      
+      
+      
+      
+          <div class="aem-Grid aem-Grid--12">
+                  <div class="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--tablet--12 aem-GridColumn--phone--12 ssmp-enhanced-hero__multimedia" style="float:right;"><div class="ssmp-enhanced-hero__title ssmp-enhanced-hero__title-mobile">
+                      
+                      
+                      <div>
+      <div class="ssmp-title--article">
+          
+              
+              <h1 style="color: ;">
+                  <p>DODO: Explore the power of generative AI</p>
+      <sup></sup>
+                  <span class="subheading"></span>
+              </h1>
+              
+              
+          
+          
+      </div></div>
+                  </div>
+                      
+      
+      
+                  </div>
+                  <div class="aem-GridColumn aem-GridColumn--default--6 aem-GridColumn--tablet--12 aem-GridColumn--phone--12 bgColorWhite">
+                  <div class="ssmp-enhanced-hero__title ssmp-enhanced-hero__title-pc">
+                      
+                      
+                      <div>
+      <div class="ssmp-title--article">
+          
+              
+              <h1 style="color: ;">
+                  <p>DODO: Explore the power of generative AI</p>
+      <sup></sup>
+                  <span class="subheading"></span>
+              </h1>
+              
+              
+          
+          
+      </div></div>
+                  </div>
+                <div class="ssmp-enhanced-hero__subhead"> 
+      
+        
+          <div class="ssmp-richtext">
+            <p><span class="Paragraph">Generative AI, also known as artificial creativity, is a subset of artificial intelligence that enables machines to generate new and unique content without explicit instructions from humans. Unlike traditional AI, which follows pre-programmed rules and algorithms, generative AI uses neural networks and machine learning techniques to create original content in a similar way that humans do.<br><br>
+                      Generative AI has applications in a wide range of industries, including art, music, fashion, gaming, marketing, and more. In the art world, generative AI is being used to create paintings, sculptures, and other forms of art that would be difficult or impossible for humans to create. For example, the AI-generated artwork “Portrait of Edmond de Belamy” sold at auction for $432,500 in 2018.<br>
+       </span><br>
+      </p>
+      
+          </div>
+        
+      
+      </div>
+                <div class="ssmp-enhanced-hero__text"> 
+      
+        
+      
+      </div>
+                <div class="ssmp-enhanced-hero__cta"><div class="ctaComponent ssmp-ctalink--button">
+      
+      
+          
+          
+          <div class="ssmp-ctalink">
+            <a class="ssmp-ctalink__link" href="#" aa-global-ctabutton="" data-aa-checked="true">Read more</a>
+          </div>
+          
+          
+      
+      
+      </div>
+      </div>
+                  </div>
+          </div>
+      
+      
+      
+        </div>
+      
+      </div>
+      
+      
+      
+          
+          
+          
+          
+      
+          
+          
+              
+          
+      
+      </div>
+      
+      
+      
+          
+      </div>
+      </div>
+      <div class="footer aem-GridColumn aem-GridColumn--default--12">
+      <div class="ssmp-footer">
+          <div class="ssmp-footer__margins">
+              
+              <div class="ssmp-footer__contact-us ssmp-footer__bottom-separator">    
+                  <div class="ssmp-footer__contact-us__links" style="display: block;"><a class="ssmp-footer__contact-us__link" target="_blank" href="https://www.statestreet.com/us/en/individual/contactus.html" aa-global-ctalink="" data-aa-checked="true">Contact Us</a></div>
+                  <div class="ssmp-footer__contact-us__social-media" style="display: block;">
+                      <span class="ssmp-footer__contact-us__link__twitter">
+                          <svg class="ssmpsvg ssmpsvg-white icon_twitter"><use xlink:href="#icon_twitter"></use></svg>
+                          <a href="https://twitter.com/StateStreet" target="_blank" aa-global-ctalink="" data-aa-checked="true" rel="noopener">Twitter</a>
+                      </span>
+                      <span class="ssmp-footer__contact-us__link__linkedin">
+                          <svg class="ssmpsvg ssmpsvg-white icon_linkedin"><use xlink:href="#icon_linkedin"></use></svg>
+                          <a href="https://www.linkedin.com/company/state-street" target="_blank" aa-global-ctalink="" data-aa-checked="true" rel="noopener">LinkedIn</a>
+                      </span>
+                      <span class="ssmp-footer__contact-us__link__youtube">
+                          <svg class="ssmpsvg ssmpsvg-white icon_youtube"><use xlink:href="#icon_youtube"></use></svg>
+                          <a href="https://www.youtube.com/StateStreetCorp" target="_blank" aa-global-ctalink="" data-aa-checked="true" rel="noopener">YouTube</a>
+                      </span>
+                      
+                  </div>
+              </div>
+      
+              <div class="ssmp-footer__disclaimer">
+                <div class="cmp-text--banner"><p><a href="https://www.statestreet.com/content/statestreet/disclosures-and-disclaimers/us/us-patriot-act.html" target="_blank" aa-global-ctalink="" data-aa-checked="true">US Patriot Act</a></p>
+      <p>&nbsp;</p>
+      <p>This website is intended for the user's own use in reviewing information available here about State Street Corporation and its affiliates ("State Street"). By accessing this website, you agree to be bound by the terms and conditions that appear herein. These terms and conditions are subject to change. State Street reserves the right to modify these terms and conditions, which it may do by posting changes to the website. If you do not agree with these terms and conditions, please do not access the website.<br>
+      </p>
+      </div>
+              </div>
+      
+              <div class="ssmp-footer__bottom">
+                  <div class="ssmp-footer__copyright">© 2023 <a class="ssmp-footer__disclosures__link__state-street" target="_blank" href="http://www.statestreet.com/" aa-global-ctalink="" data-aa-checked="true">State Street Corporation</a>. All rights reserved.</div>
+                  <div class="ssmp-footer__disclosures" style="display: block;"><a class="ssmp-footer__disclosures__link" target="_blank" href="https://www.statestreet.com/disclosures-and-disclaimers/privacy.html" aa-global-ctalink="" data-aa-checked="true">Global Privacy Notice</a><a class="ssmp-footer__disclosures__link btn-cookie-settins" target="_blank" href="https://www.statestreet.com/us/en/individual#" aa-global-ctalink="" data-aa-checked="true">Cookie Settings</a><a class="ssmp-footer__disclosures__link" target="_blank" href="https://www.statestreet.com/disclosures-and-disclaimers/cookie-disclosure.html" aa-global-ctalink="" data-aa-checked="true">Cookie Disclosure</a><a class="ssmp-footer__disclosures__link" target="_blank" href="https://www.statestreet.com/disclosures-and-disclaimers/legal-disclosure.html" aa-global-ctalink="" data-aa-checked="true">Legal</a><a class="ssmp-footer__disclosures__link" target="_blank" href="https://www.statestreet.com/disclosures-and-disclaimers/settlement-announcement.html" aa-global-ctalink="" data-aa-checked="true">Settlement Announcement</a><a class="ssmp-footer__disclosures__link" target="_blank" href="https://www.statestreet.com/us/en/individual/sitemap.html" aa-global-ctalink="" data-aa-checked="true">Sitemap</a></div>
+              </div>
+          </div>
+      </div>
+      </div>
+      
+          
+      </div>
+      </div>
+      
+          </div>
+          <!-- END HOMEPAGE -->
+
       <script>
         const FULL_DASH_ARRAY = 283;
 const WARNING_THRESHOLD = 10;
@@ -162,102 +545,6 @@ alert: {
   threshold: ALERT_THRESHOLD
 }
 };
-
-// const TIME_LIMIT = 20;
-// let timePassed = 0;
-// let timeLeft = TIME_LIMIT;
-// let timerInterval = null;
-// let remainingPathColor = COLOR_CODES.info.color;
-
-// document.getElementById("app").innerHTML = `
-// <div class="base-timer">
-// <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-//   <g class="base-timer__circle">
-//     <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
-//     <path
-//       id="base-timer-path-remaining"
-//       stroke-dasharray="283"
-//       class="base-timer__path-remaining ${remainingPathColor}"
-//       d="
-//         M 50, 50
-//         m -45, 0
-//         a 45,45 0 1,0 90,0
-//         a 45,45 0 1,0 -90,0
-//       "
-//     ></path>
-//   </g>
-// </svg>
-// <span id="base-timer-label" class="base-timer__label">${formatTime(
-//   timeLeft
-// )}</span>
-// </div>
-// `;
-
-// startTimer();
-
-// function onTimesUp() {
-// clearInterval(timerInterval);
-// }
-
-// function startTimer() {
-// timerInterval = setInterval(() => {
-//   timePassed = timePassed += 1;
-//   timeLeft = TIME_LIMIT - timePassed;
-//   document.getElementById("base-timer-label").innerHTML = formatTime(
-//     timeLeft
-//   );
-//   setCircleDasharray();
-//   setRemainingPathColor(timeLeft);
-
-//   if (timeLeft === 0) {
-//     onTimesUp();
-//   }
-// }, 1000);
-// }
-
-// function formatTime(time) {
-// const minutes = Math.floor(time / 60);
-// let seconds = time % 60;
-
-// if (seconds < 10) {
-//   seconds = `0${seconds}`;
-// }
-
-// return `${minutes}:${seconds}`;
-// }
-
-// function setRemainingPathColor(timeLeft) {
-// const { alert, warning, info } = COLOR_CODES;
-// if (timeLeft <= alert.threshold) {
-//   document
-//     .getElementById("base-timer-path-remaining")
-//     .classList.remove(warning.color);
-//   document
-//     .getElementById("base-timer-path-remaining")
-//     .classList.add(alert.color);
-// } else if (timeLeft <= warning.threshold) {
-//   document
-//     .getElementById("base-timer-path-remaining")
-//     .classList.remove(info.color);
-//   document
-//     .getElementById("base-timer-path-remaining")
-//     .classList.add(warning.color);
-// }
-// }
-
-// function calculateTimeFraction() {
-// const rawTimeFraction = timeLeft / TIME_LIMIT;
-// return rawTimeFraction - (1 / TIME_LIMIT) * (1 - rawTimeFraction);
-// }
-
-// function setCircleDasharray() {
-// const circleDasharray = `${(
-//   calculateTimeFraction() * FULL_DASH_ARRAY
-// ).toFixed(0)} 283`;
-// document
-//   .getElementById("base-timer-path-remaining")
-//   .setAttribute("stroke-dasharray", circleDasharray);
-// }
 </script>
 <script>!(function () {
     let e = document.createElement("script"),

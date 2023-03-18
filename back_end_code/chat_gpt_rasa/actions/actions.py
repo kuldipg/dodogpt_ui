@@ -4,7 +4,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 
-openai.api_key = "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"
+openai.api_key = "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"
 
 conversation_history = []
 
